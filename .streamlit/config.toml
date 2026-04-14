@@ -1,2 +1,6 @@
-[theme.light]
-[theme.light.sidebar]
+[theme]
+base = "dark"
+primaryColor = "#ff4b6e"
+backgroundColor = "#0b1020"
+secondaryBackgroundColor = "#151b2f"
+textColor = "#f3f6ff"
