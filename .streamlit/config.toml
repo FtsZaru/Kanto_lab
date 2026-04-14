@@ -1,6 +1,10 @@
 [theme]
-base = "light"
-primaryColor = "#ff4b6e"
-backgroundColor = "#0b1020"
-secondaryBackgroundColor = "#151b2f"
-textColor = "#f3f6ff"
+primaryColor = "#bb5a38"            # Warm accent
+backgroundColor = "#f4f3ed"         # Soft cream
+secondaryBackgroundColor = "#ecebe3" # Subtle contrast for cards
+textColor = "#3d3a2a"               # Dark brown text
+baseRadius = "0.6rem"               # Rounded corners
+font = "sans serif"
+
+[theme.sidebar]
+backgroundColor = "#e8e7dd"
