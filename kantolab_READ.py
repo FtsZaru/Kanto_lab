@@ -10,7 +10,7 @@ import json
 uploaded_file = st.file_uploader("Upload a Save File", type=["sav"])
 if uploaded_file is None:
       
-    with open('Pokemon - Red Version (USA, Europe) (SGB Enhanced).sav', 'rb') as sf:
+    with open('Kantolab.sav', 'rb') as sf:
         savedata = bytearray(sf.read())
     st.write("Upload a Save File")
 
