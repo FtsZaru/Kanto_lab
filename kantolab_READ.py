@@ -57,22 +57,20 @@ def read_24bit (savedata, PARTY_COUNTER):
 PARTY_OFFSET = 0x2F2C
 PARTY_BLOCK = 0x2F34
 TRAINER_OFFSET = 0x2c58
-
+TRAINER_NAME= ""
 Party_Data = []
 count = savedata[PARTY_OFFSET]
-
+  #break stops loop, place after for logic
+for name in savedata[TRAINER_OFFSET:TRAINER_OFFSET + 11]:
+    
+      if name == 80: break 
+      TRAINER_NAME += gen1_byte_to_char_corr[name]
 
      
   
 for i in range(count):
 
     PARTY_COUNTER = PARTY_BLOCK + 44 * i
-    #break stops loop, place after for logic
-    for name in savedata[TRAINER_OFFSET + PARTY_BLOCK:TRAINER_OFFSET + PARTY_BLOCK + 9]:
-        TRAINER_NAME= ""
-        if name == 80: break 
-        TRAINER_NAME += gen1_byte_to_char_corr[name]
-          
     Species = savedata[PARTY_COUNTER]
     CURRENT_HP = read_16bit(savedata,PARTY_COUNTER + 1)
     STATUS = savedata[PARTY_COUNTER +4]
