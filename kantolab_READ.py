@@ -57,18 +57,19 @@ def read_24bit (savedata, PARTY_COUNTER):
 PARTY_OFFSET = 0x2F2C
 PARTY_BLOCK = 0x2F34
 TRAINER_OFFSET = 0x303C
-TRAINER_NAME= ""
+
 Party_Data = []
 count = savedata[PARTY_OFFSET]
 
 
      
-Party_Data = []    
+  
 for i in range(count):
 
     PARTY_COUNTER = PARTY_BLOCK + 44 * i
     #break stops loop, place after for logic
     for name in savedata[TRAINER_OFFSET + PARTY_BLOCK:TRAINER_OFFSET + PARTY_BLOCK + 9]:
+        TRAINER_NAME= ""
         if name == 80: break 
         TRAINER_NAME += gen1_byte_to_char_corr[name]
           
