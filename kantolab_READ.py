@@ -56,7 +56,7 @@ def read_24bit (savedata, PARTY_COUNTER):
 
 PARTY_OFFSET = 0x2F2C
 PARTY_BLOCK = 0x2F34
-TRAINER_OFFSET = 0x303C
+TRAINER_OFFSET = 0x2c58
 
 Party_Data = []
 count = savedata[PARTY_OFFSET]
