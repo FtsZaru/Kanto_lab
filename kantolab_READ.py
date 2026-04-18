@@ -61,16 +61,20 @@ TRAINER_NAME= ""
 Party_Data = []
 count = savedata[PARTY_OFFSET]
   #break stops loop, place after for logic
-for name in savedata[TRAINER_OFFSET:TRAINER_OFFSET + 11]:
-    
-      if name == 80: break 
-      TRAINER_NAME += gen1_byte_to_char_corr[name]
-
-     
-  
+def get_trainer_name (savedata, TRAINER_OFFSET):
+    TRAINER_NAME = ""
+    for name in savedata[TRAINER_OFFSET:TRAINER_OFFSET + 11]:
+        if name == 0x50: break 
+        TRAINER_NAME += gen1_byte_to_char_corr[name]
+    return TRAINER_NAME  
+ 
+ 
 for i in range(count):
-
+    
+    TRAINER_ID_count= TRAINER_OFFSET + 11 * i
     PARTY_COUNTER = PARTY_BLOCK + 44 * i
+
+    TRAINER_NAME = get_trainer_name (savedata, TRAINER_ID_count)
     Species = savedata[PARTY_COUNTER]
     CURRENT_HP = read_16bit(savedata,PARTY_COUNTER + 1)
     STATUS = savedata[PARTY_COUNTER +4]
