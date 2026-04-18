@@ -56,11 +56,13 @@ def read_24bit (savedata, PARTY_COUNTER):
 
 PARTY_OFFSET = 0x2F2C
 PARTY_BLOCK = 0x2F34
-TRAINER_OFFSET = 0x2c58
-TRAINER_NAME= ""
+TRAINER_OFFSET = 0x303C
+
 Party_Data = []
 count = savedata[PARTY_OFFSET]
-  #break stops loop, place after for logic
+   #break stops loop, place after for logic
+
+
 def get_trainer_name (savedata, TRAINER_OFFSET):
     TRAINER_NAME = ""
     for name in savedata[TRAINER_OFFSET:TRAINER_OFFSET + 11]:
